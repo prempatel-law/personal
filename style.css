@@ -1,27 +1,3 @@
-@keyframes infiniteScroll {
-    from {transform: translateX(0%)}
-    to {transform: translateX(-10%)}
-  }
-  .container {
-    width: 100%;
-    overflow-x: hidden;
-    height: 25%
-  }
-  .horizontal-scrolling-items {
-    display: flex;
-    color: black;
-    font-size: 20px;
-    animation-name: infiniteScroll;
-    animation-duration: 12s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    font-family:  'Times New Roman', Times, serif;
-  }
-  .horizontal-scrolling-items__item {
-    white-space: nowrap;
-    font-family:  'Times New Roman', Times, serif;
-  }
-  
   h1 {
     color: white !important;
     font-family: 'Times New Roman', Times, serif !important;
@@ -83,3 +59,43 @@
     border-top: none;
     color: white !important;
   }
+
+  #scroll-container {
+    border: 3px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  ​
+  #scroll-text {
+    /* animation properties */
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 15s linear infinite;
+  }
+  ​
+  /* for Firefox */
+  @-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+  }
+  ​
+  /* for Chrome */
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%); }
+    to { -webkit-transform: translateX(-100%); }
+  }
+  ​
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    to {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
